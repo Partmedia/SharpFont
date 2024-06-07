@@ -1,35 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<AssemblyName>SpaceWizards.SharpFont</AssemblyName>
-		<TargetFrameworks>net45;net472;netcoreapp3.0</TargetFrameworks>
+		<TargetFramework>net7.0</TargetFramework>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-		<Copyright>Copyright (c) Robert Rouhani 2012-2016</Copyright>
-		<Company>Robmaister</Company>
-		<Description>Cross-platform FreeType bindings for C#. This package is modified from the original to multi-target include .NET Core 3. This package does not automatically provide a build of Freetype itself, so you will have to deal with this manually. Note that on Windows you cannot use a stock build of freetype.dll, as the build has to be modified (to fix some FFI issues). See this repo for more information: https://github.com/Robmaister/SharpFont.Dependencies</Description>
-		<Version>1.0.1</Version>
+		<Version>1.0.2</Version>
+
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+		<Copyright>Copyright (c) Robert Rouhani 2012-2016, Space Wizards Contributors 2019-2023</Copyright>
+		<Authors>Robmaister, Space Wizards</Authors>
+		<Description>Cross-platform FreeType bindings for C#. This package does not automatically provide a build of Freetype itself, so you will have to deal with this manually. Note that on Windows you cannot use a stock build of freetype.dll, as the build has to be modified (to fix some FFI issues). See this repo for more information: https://github.com/Robmaister/SharpFont.Dependencies</Description>
+		<PackageTags>freetype,sharpfont,font</PackageTags>
+		
+		<RepositoryType>Git</RepositoryType>
 		<RepositoryUrl>https://github.com/space-wizards/SharpFont</RepositoryUrl>
 		<PackageProjectUrl>https://github.com/space-wizards/SharpFont</PackageProjectUrl>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		
+		<!-- SourceLink -->
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 	</PropertyGroup>
-	<ItemGroup>
-		<Content Include="..\SpaceWizards.SharpFont.dll.config">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-			<PackagePath>contentFiles/any/net45</PackagePath>
-		</Content>
-		<Content Include="..\SpaceWizards.SharpFont.dll.config">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-			<PackageCopyToOutput>true</PackageCopyToOutput>
-			<PackagePath>contentFiles/any/net472</PackagePath>
-		</Content>
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.0-preview.2">
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-			<PrivateAssets>all</PrivateAssets>
-		</PackageReference>
-	</ItemGroup>
-	<ItemGroup>
-		<PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" Condition="'$(TargetFramework)' == 'net45'"/>
-	</ItemGroup>
 </Project>
